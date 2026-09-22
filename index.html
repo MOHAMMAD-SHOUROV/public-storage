@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shourov Storage</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📁 Shourov Storage</h1>
+      <p>Photo & Video Storage</p>
+    </header>
+
+    <section id="authCard" class="card">
+      <div class="tabs">
+        <button id="loginTab" class="active">Login</button>
+        <button id="registerTab">Register</button>
+      </div>
+
+      <input id="email" type="email" placeholder="Email">
+      <input id="password" type="password" placeholder="Password">
+      <button id="authBtn" class="primary">Login</button>
+      <p id="authMsg" class="msg"></p>
+    </section>
+
+    <section id="appCard" class="card hidden">
+      <div class="topbar">
+        <div>
+          <strong id="userEmail"></strong>
+          <div class="small">Your files are stored in your private area.</div>
+        </div>
+        <button id="logoutBtn" class="danger">Logout</button>
+      </div>
+
+      <hr>
+
+      <label>Folder name</label>
+      <input id="folder" value="My Files" placeholder="e.g. Family 2026">
+
+      <label>Choose photo/video</label>
+      <input id="fileInput" type="file" accept="image/*,video/*" multiple>
+
+      <button id="uploadBtn" class="primary">⬆ Upload</button>
+      <p id="uploadMsg" class="msg"></p>
+
+      <h2>My Files</h2>
+      <button id="refreshBtn">↻ Refresh</button>
+      <div id="fileList"></div>
+    </section>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js"></script>
+</body>
+</html>
