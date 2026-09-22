@@ -1,1 +1,259 @@
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#0b1020;color:#fff}.container{max-width:850px;margin:0 auto;padding:25px 15px}header{text-align:center;margin-bottom:20px}header h1{margin-bottom:5px}.card{background:#151c31;border:1px solid #293452;border-radius:16px;padding:20px;margin-bottom:20px;box-shadow:0 10px 30px #0004}.hidden{display:none}.tabs{display:flex;gap:8px;margin-bottom:15px}.tabs button{flex:1}.tabs button.active{background:#2563eb;color:#fff}input{width:100%;padding:12px;margin:8px 0 14px;border-radius:10px;border:1px solid #394562;background:#0d1426;color:#fff}button{padding:11px 16px;border:0;border-radius:10px;background:#2a3552;color:#fff;cursor:pointer}button:hover{opacity:.9}.primary{background:#2563eb;width:100%}.danger{background:#b91c1c}.topbar{display:flex;justify-content:space-between;gap:15px;align-items:center}.small{font-size:12px;color:#9ca9c5;margin-top:5px}.msg{min-height:20px;color:#9fb5ff}.file{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px;margin-top:10px;background:#0d1426;border-radius:10px}.file a{color:#7db1ff;text-decoration:none}.file button{background:#8f1d1d}hr{border:0;border-top:1px solid #293452;margin:20px 0}label{display:block;font-size:13px;color:#b9c3d8;margin-top:8px}h2{margin-bottom:8px} @media(max-width:600px){.topbar{align-items:flex-start;flex-direction:column}.file{align-items:flex-start;flex-direction:column}}
+```css
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b1020;
+  color: #fff;
+}
+
+.container {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 25px 15px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  margin-bottom: 5px;
+}
+
+header p {
+  color: #9ca9c5;
+}
+
+.card {
+  background: #151c31;
+  border: 1px solid #293452;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 30px #0004;
+}
+
+.hidden {
+  display: none;
+}
+
+
+/* =========================
+   LOGIN / REGISTER TABS
+========================= */
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.tabs button {
+  flex: 1;
+}
+
+.tabs button.active {
+  background: #2563eb;
+  color: #fff;
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0 14px;
+  border-radius: 10px;
+  border: 1px solid #394562;
+  background: #0d1426;
+  color: #fff;
+  outline: none;
+}
+
+input:focus {
+  border-color: #2563eb;
+}
+
+
+/* =========================
+   SELECT
+========================= */
+
+select {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0 8px;
+  border-radius: 10px;
+  border: 1px solid #394562;
+  background: #0d1426;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+}
+
+select:focus {
+  border-color: #2563eb;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+  padding: 11px 16px;
+  border: 0;
+  border-radius: 10px;
+  background: #2a3552;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.primary {
+  background: #2563eb;
+  width: 100%;
+}
+
+.danger {
+  background: #b91c1c;
+}
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: center;
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.small {
+  font-size: 12px;
+  color: #9ca9c5;
+  margin-top: 5px;
+}
+
+.msg {
+  min-height: 20px;
+  color: #9fb5ff;
+}
+
+label {
+  display: block;
+  font-size: 13px;
+  color: #b9c3d8;
+  margin-top: 8px;
+}
+
+h2 {
+  margin-bottom: 8px;
+}
+
+h3 {
+  margin-top: 22px;
+  margin-bottom: 8px;
+}
+
+
+/* =========================
+   FILE LIST
+========================= */
+
+.file {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  margin-top: 10px;
+  background: #0d1426;
+  border-radius: 10px;
+  border: 1px solid #202b45;
+}
+
+.file a {
+  color: #7db1ff;
+  text-decoration: none;
+  margin-right: 8px;
+}
+
+.file a:hover {
+  text-decoration: underline;
+}
+
+.file button {
+  background: #8f1d1d;
+}
+
+
+/* =========================
+   DIVIDER
+========================= */
+
+hr {
+  border: 0;
+  border-top: 1px solid #293452;
+  margin: 20px 0;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .container {
+    padding: 15px 10px;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .topbar .danger {
+    width: 100%;
+  }
+
+  .file {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .file > div:last-child {
+    width: 100%;
+  }
+
+  .file a,
+  .file button {
+    display: inline-block;
+    margin-top: 5px;
+  }
+
+}
+```
