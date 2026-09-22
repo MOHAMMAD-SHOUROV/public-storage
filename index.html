@@ -1,57 +1,290 @@
+```html
 <!doctype html>
 <html lang="bn">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Shourov Storage</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
   <div class="container">
+
+    <!-- Header -->
     <header>
       <h1>📁 Shourov Storage</h1>
       <p>Photo & Video Storage</p>
     </header>
 
+
+    <!-- =========================
+         LOGIN / REGISTER
+    ========================== -->
+
     <section id="authCard" class="card">
+
       <div class="tabs">
-        <button id="loginTab" class="active">Login</button>
-        <button id="registerTab">Register</button>
+
+        <button
+          id="loginTab"
+          class="active"
+          type="button">
+          Login
+        </button>
+
+        <button
+          id="registerTab"
+          type="button">
+          Register
+        </button>
+
       </div>
 
-      <input id="email" type="email" placeholder="Email">
-      <input id="password" type="password" placeholder="Password">
-      <button id="authBtn" class="primary">Login</button>
-      <p id="authMsg" class="msg"></p>
+
+      <input
+        id="email"
+        type="email"
+        placeholder="Email"
+        autocomplete="email"
+      >
+
+
+      <input
+        id="password"
+        type="password"
+        placeholder="Password"
+        autocomplete="current-password"
+      >
+
+
+      <button
+        id="authBtn"
+        class="primary"
+        type="button">
+        Login
+      </button>
+
+
+      <p
+        id="authMsg"
+        class="msg">
+      </p>
+
     </section>
 
-    <section id="appCard" class="card hidden">
+
+
+    <!-- =========================
+         MAIN APP
+    ========================== -->
+
+    <section
+      id="appCard"
+      class="card hidden">
+
+
+      <!-- User / Logout -->
       <div class="topbar">
+
         <div>
+
           <strong id="userEmail"></strong>
-          <div class="small">Your files are stored in your private area.</div>
+
+          <div class="small">
+            Your files are stored in your storage area.
+          </div>
+
         </div>
-        <button id="logoutBtn" class="danger">Logout</button>
+
+
+        <button
+          id="logoutBtn"
+          class="danger"
+          type="button">
+          Logout
+        </button>
+
       </div>
+
 
       <hr>
 
-      <label>Folder name</label>
-      <input id="folder" value="My Files" placeholder="e.g. Family 2026">
 
-      <label>Choose photo/video</label>
-      <input id="fileInput" type="file" accept="image/*,video/*" multiple>
 
-      <button id="uploadBtn" class="primary">⬆ Upload</button>
-      <p id="uploadMsg" class="msg"></p>
+      <!-- =========================
+           FOLDER NAME
+      ========================== -->
 
-      <h2>My Files</h2>
-      <button id="refreshBtn">↻ Refresh</button>
+      <label for="folder">
+        Folder name
+      </label>
+
+
+      <input
+        id="folder"
+        type="text"
+        value="My Files"
+        placeholder="e.g. Family 2026"
+      >
+
+
+
+      <!-- =========================
+           PUBLIC / PRIVATE
+      ========================== -->
+
+      <label for="visibility">
+        Folder visibility
+      </label>
+
+
+      <select id="visibility">
+
+        <option value="private">
+          🔒 Private
+        </option>
+
+        <option value="public">
+          🌐 Public
+        </option>
+
+      </select>
+
+
+
+      <!-- Visibility information -->
+
+      <div class="small" id="visibilityInfo">
+
+        🔒 Private:
+        শুধু আপনি এই folder-এর files দেখতে পারবেন।
+
+      </div>
+
+
+
+      <!-- =========================
+           FILE SELECT
+      ========================== -->
+
+      <label for="fileInput">
+        Choose photo/video
+      </label>
+
+
+      <input
+        id="fileInput"
+        type="file"
+        accept="image/*,video/*"
+        multiple
+      >
+
+
+      <div class="small">
+        একসাথে একাধিক photo/video select করতে পারবেন।
+      </div>
+
+
+
+      <!-- =========================
+           UPLOAD
+      ========================== -->
+
+      <button
+        id="uploadBtn"
+        class="primary"
+        type="button">
+
+        ⬆ Upload
+
+      </button>
+
+
+      <p
+        id="uploadMsg"
+        class="msg">
+      </p>
+
+
+
+      <!-- =========================
+           MY FILES
+      ========================== -->
+
+      <h2>
+        My Files
+      </h2>
+
+
+      <button
+        id="refreshBtn"
+        type="button">
+
+        ↻ Refresh
+
+      </button>
+
+
       <div id="fileList"></div>
+
+
     </section>
+
   </div>
 
+
+
+  <!-- =========================
+       SUPABASE
+  ========================== -->
+
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+  <!-- Your JavaScript -->
+
   <script src="app.js"></script>
+
+
+
+  <!-- =========================
+       VISIBILITY MESSAGE
+  ========================== -->
+
+  <script>
+
+    const visibilitySelect =
+      document.getElementById("visibility");
+
+    const visibilityInfo =
+      document.getElementById("visibilityInfo");
+
+
+    visibilitySelect.addEventListener(
+      "change",
+      function () {
+
+        if (this.value === "public") {
+
+          visibilityInfo.textContent =
+            "🌐 Public: অন্যরাও এই folder-এর public files দেখতে পারবে।";
+
+        } else {
+
+          visibilityInfo.textContent =
+            "🔒 Private: শুধু আপনি এই folder-এর files দেখতে পারবেন।";
+
+        }
+
+      }
+    );
+
+  </script>
+
 </body>
 </html>
+```
